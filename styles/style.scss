@@ -1,0 +1,233 @@
+
+
+#body{
+    margin: 0;
+    color: #000000;
+    background-color: #000000;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    //height: 100vh;
+    scrollbar-width: 0px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    #canvas{
+        position: absolute;
+        background-color: #000000;
+        top: 0;
+        left: 0;
+        height: 100vh;
+    }
+    .constant-text{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background-color: #f00;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: 'Sedgwick Ave Display', cursive;
+    }
+    .side_menu{
+        position: fixed;
+        top:0%;
+        left: 20%;
+        height: 100vh;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        z-index: 1000;
+
+        .side_menu_title{
+            font-size: calc(3rem + 1vw);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Sedgwick Ave Display', cursive;
+            color: #eee;
+            text-shadow: #f00 0px 0px 10px;
+        }
+        .side_menu_items{
+            display: flex;
+            //position: relative;
+            width: 100%;
+            height: 500px;
+            perspective: 500px;
+            justify-content: space-around;
+            align-items: start;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            $items-count: 6;
+            //background-color: bisque;
+            gap: 20px;
+            .item{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: end;
+                opacity: 0.8;
+                transform-origin: center;
+                margin-bottom: 1rem;
+                background-color: beige;
+                border-radius: 2rem;
+                gap: 20px;
+                padding: 10px;
+                height: 150px;
+                box-shadow: #000000 0px 0px 10px;
+                .element{
+                    display: none;
+                }
+                .back_btn{
+                    display: none;
+                }
+                span{
+                    //font-family: 'Montserrat', sans-serif;
+                    font-size: xx-large;
+                }
+                img{
+                    width: 200px;
+                    height: 200px;
+                    position: absolute;
+                    margin-right: 1rem;
+                    top: -100px;
+                }
+                
+                transition: all 0.5s ease;
+                &:hover{
+                    opacity: 1;
+                    transform: scale(1.2);
+                    color: #f00;
+                }
+                &.hide{
+                    display: none;
+                }
+                &.current{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 1;
+                    justify-content: start;
+                    //Since child one is the image
+                    img{
+                        align-self: baseline;
+                        transform: scale(2);
+                    }
+                    span{
+                        color: rgb(0, 0, 0);
+                        font-size: xx-large;
+
+                    }
+                    .back_btn{
+                        display: flex;
+                        position: absolute;
+                        top: -100px;
+                        color: #eee;
+                        padding: 10px;
+                        border-radius: 0.4rem;
+                        background-color: #000000;
+                        z-index: 3000;
+                        &:hover{
+                            background-color: #f00;
+                            color: #000000;
+                        }
+
+                    }
+                    .element{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .article{
+                            font-family: 'Sedgwick Ave Display', cursive;
+                            display: flex;
+                            justify-content: space-around;
+                            gap: 100px;
+                        }
+                        p{
+                            font-family: 'Montserrat', sans-serif;
+                            padding: 10px;
+                            background-color: black;
+                            font-style: italic;
+                            font-size: 0.5rem;
+                            font-weight: 700;
+                            text-align: center;
+                            color: #ffffff;
+                            border-radius: 1.32rem;
+                            z-index: 2000;
+                        }
+
+
+                    }
+                    &:hover{
+                    opacity: 1;
+                    transform: scale(1);
+                    }
+                }
+
+            }
+            
+            
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+
+            // before
+            /*
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                top: 0;
+                height: 100px;
+                //gradient baqcground
+                background: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0.9) 100%);
+                z-index: 500;
+            }
+            // after
+            &:after{
+                content: '';
+                bottom: 0;
+                position: absolute;
+                width: 100%;
+                height: 340px;
+                background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 10%,rgba(0,0,0,0.9) 100%);
+                
+            }
+            */
+        }
+
+        // Arrow 
+        .arrow{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            //transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border: #fff solid 2px;
+            clip-path: circle();
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+
+            &:hover{
+                color: #fff;
+                padding: 5px;
+                
+            }
+
+
+        }
+    }
+}

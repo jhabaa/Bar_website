@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Le decor du burger</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    </head>
+    <body id="body">
+        <div id="canvas"></div>
+        <div class="side_menu">
+            <div class="side_menu_title">
+                <h1>Le 4ème burger</h1>
+            </div>
+            
+           <div class="side_menu_items">
+                <div class="item" id="home">
+                    <span>Accueil</span>
+                </div>
+                <div class="item" id="burgers">
+                    <img src="./ressources/burger.png" alt="">
+                    <span>Nos burgers</span>
+                    <div class="element">
+                        <div class="article">
+                            <span>Le Bastos</span>
+                            <span>12€</span>
+                        </div>
+                        <p>Le burger Bastos est un burger qui a été créé par un chef cuisinier de renom. Il est composé de pain, de viande, de fromage, de salade, de tomate et de sauce. Il est très bon et très apprécié par les clients.</p>
+                    </div>
+                    <div class="element">
+                        <div class="article">
+                            <span>The Rock</span>
+                            <span>10€</span>
+                        </div>
+                        <p>Le burger The Rock saura ravir les papilles des pationnés. Avec son cheddar, son poulet mariné et ses oignons rouges, rien ne lui resiste</p>
+                    </div>
+                    <div class="back_btn" id="back_btn">retour</div>
+                </div>
+                <div class="item" id="boissons">
+                    <img src="./ressources/drink.png" alt="">
+                    <span>Nos boissons</span>
+                    <div class="element">
+                        <div class="article">
+                            <span>Coca-Cola</span>
+                            <span>2€</span>
+                        </div>
+                        <p>Le Coca-Cola est une boisson gazeuse sucrée de type cola fabriquée par The Coca-Cola Company. C'est un soda de couleur noire, inventé aux États-Unis en 1886 par John Pemberton sous le nom de « Coca-Cola ».</p>
+                    </div>
+                    <div class="element">
+                        <div class="article">
+                            <span>Sprite</span>
+                            <span>2€</span>
+                        </div>
+                        <p>Sprite est une marque commerciale de boisson gazeuse à l'arôme de citron vert et de citron créée par The Coca-Cola Company. Elle est vendue dans plus de 190 pays. Sprite fut créé en 1961 après le succès de son concurrent 7 Up.</p>
+                    </div>   
+                </div>
+                <div class="item" id="salades">
+                    <img src="./ressources/salade.png" alt="">
+                    <span>Les salades</span>
+                    <div class="element">
+                        <div class="article">
+                            <span>La César</span>
+                            <span>8€</span>
+                        </div>
+                        <p>La salade César est une salade composée de la cuisine américaine. Elle est composée de laitue romaine, de croûtons, de parmesan et de sauce César. Elle est généralement servie avec du poulet grillé, et parfois avec du bacon.</p>
+                    </div>
+                    <div class="element">
+                        <div class="article">
+                            <span>La Niçoise</span>
+                            <span>8€</span>
+                        </div>
+                        <p>La salade niçoise est une salade composée traditionnelle de la cuisine niçoise, à base de tomates, de thon ou d'anchois et d'œufs durs, agrémentée de poivrons, d'oignons, de concombres, de radis, de cébettes, d'olives et d'huile d'olive.</p>
+                    </div>
+                    <div class="element">
+                        <div class="article">
+                            <span>Calafatas</span>
+                            <span>8€</span>
+                        </div>
+                        <p>La salade calafatas est une salade composée traditionnelle de la cuisine espagnole, à base de tomates, de thon ou d'anchois et d'œufs durs, agrémentée de poivrons, d'oignons, de concombres, de radis, de cébettes, d'olives et d'huile d'olive.</p>
+                    </div>
+                    <div class="back_btn">retour</div>
+                </div>
+                <div class="item" id="desserts">
+                    <img src="./ressources/dessert.png" alt="">
+                    <span>Les desserts</span>
+                </div>
+                <div class="item" id="contact">
+                    <img src="./ressources/contact.png" alt="">
+                    <span>Contact</span>
+                </div>
+           </div>
+           
+        </div>
+        <script src="./js/wheel-menu.js" async defer></script>
+        <script type="module" src="./js/main.js" async defer></script>
+    </body>
+</html>
