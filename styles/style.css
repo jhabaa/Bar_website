@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #body {
   margin: 0;
   color: #000000;
@@ -33,56 +34,23 @@
 #body .side_menu {
   position: fixed;
   top: 0%;
-  left: 20%;
-  height: 100vh;
-  background-color: transparent;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5333333333);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
+  justify-content: start;
+  align-items: center;
   z-index: 1000;
-}
-#body .side_menu .side_menu_title {
-  font-size: calc(3rem + 1vw);
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: "Sedgwick Ave Display", cursive;
-  color: #eee;
-  text-shadow: #f00 0px 0px 10px;
 }
 #body .side_menu .side_menu_items {
   display: flex;
   width: 100%;
-  height: 500px;
   perspective: 500px;
-  justify-content: space-around;
+  justify-content: center;
   align-items: start;
-  font-size: 1.5rem;
+  font-size: calc(0.5rem + 1vw);
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
-  gap: 20px;
-  /*
-  &::before{
-      content: '';
-      position: absolute;
-      width: 100%;
-      top: 0;
-      height: 100px;
-      //gradient baqcground
-      background: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0.9) 100%);
-      z-index: 500;
-  }
-  // after
-  &:after{
-      content: '';
-      bottom: 0;
-      position: absolute;
-      width: 100%;
-      height: 340px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 10%,rgba(0,0,0,0.9) 100%);
-
-  }
-  */
 }
 #body .side_menu .side_menu_items .item {
   position: relative;
@@ -93,22 +61,21 @@
   opacity: 0.8;
   transform-origin: center;
   margin-bottom: 1rem;
-  background-color: beige;
+  color: #eee;
   border-radius: 2rem;
   gap: 20px;
   padding: 10px;
-  height: 150px;
   box-shadow: #000000 0px 0px 10px;
   transition: all 0.5s ease;
 }
-#body .side_menu .side_menu_items .item .element {
+#body .side_menu .side_menu_items .item .elements {
   display: none;
 }
 #body .side_menu .side_menu_items .item .back_btn {
   display: none;
 }
 #body .side_menu .side_menu_items .item span {
-  font-size: xx-large;
+  font-size: calc(0.5rem + 1vw);
 }
 #body .side_menu .side_menu_items .item img {
   width: 200px;
@@ -120,7 +87,6 @@
 #body .side_menu .side_menu_items .item:hover {
   opacity: 1;
   transform: scale(1.2);
-  color: #f00;
 }
 #body .side_menu .side_menu_items .item.hide {
   display: none;
@@ -128,17 +94,23 @@
 #body .side_menu .side_menu_items .item.current {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   opacity: 1;
   justify-content: start;
+}
+#body .side_menu .side_menu_items .item.current::before {
+  content: "Taper sur l'écran pour revenir en arrière";
+  font-style: italic;
+  font-size: calc(0.5rem + 1vw);
 }
 #body .side_menu .side_menu_items .item.current img {
   align-self: baseline;
   transform: scale(2);
 }
 #body .side_menu .side_menu_items .item.current span {
-  color: rgb(0, 0, 0);
-  font-size: xx-large;
+  color: rgb(255, 255, 255);
+  font-size: calc(0.5rem + 2vw);
+  font-family: "Sedgwick Ave Display", cursive;
 }
 #body .side_menu .side_menu_items .item.current .back_btn {
   display: flex;
@@ -154,24 +126,42 @@
   background-color: #f00;
   color: #000000;
 }
-#body .side_menu .side_menu_items .item.current .element {
+#body .side_menu .side_menu_items .item.current .elements {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#body .side_menu .side_menu_items .item.current .elements .element {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
+  background-color: #000000;
+  margin: 5px;
+  border-radius: 2rem;
+  box-shadow: #eee 0px 0px 10px;
 }
-#body .side_menu .side_menu_items .item.current .element .article {
+#body .side_menu .side_menu_items .item.current .elements .element .article {
   font-family: "Sedgwick Ave Display", cursive;
   display: flex;
   justify-content: space-around;
-  gap: 100px;
+  gap: 40px;
+  color: #eee;
 }
-#body .side_menu .side_menu_items .item.current .element p {
+#body .side_menu .side_menu_items .item.current .elements .element .article span {
+  color: #eee;
+}
+#body .side_menu .side_menu_items .item.current .elements .element p {
   font-family: "Montserrat", sans-serif;
   padding: 10px;
   background-color: black;
   font-style: italic;
-  font-size: 0.5rem;
+  font-size: 1rem;
   font-weight: 700;
   text-align: center;
   color: #ffffff;
